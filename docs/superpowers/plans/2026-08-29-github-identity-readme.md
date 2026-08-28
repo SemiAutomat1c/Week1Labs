@@ -207,7 +207,7 @@ Run:
 
 ```bash
 git diff --check
-git diff --name-only
+git status --short
 git diff -- \
   App.js \
   lab1-practice.js \
@@ -218,7 +218,7 @@ git diff -- \
   package-lock.json
 ```
 
-Expected: `git diff --check` succeeds, `git diff --name-only` prints only `README.md`, and the application-file diff is empty.
+Expected: `git diff --check` succeeds, `git status --short` prints only `?? README.md`, and the application-file diff is empty.
 
 - [ ] **Step 7: Commit the README**
 
