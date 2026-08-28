@@ -6,7 +6,7 @@ export default function WelcomeScreen({ navigation }) {
       <View style={styles.header}>
         <Text style={styles.emoji}>📱</Text>
         <Text style={styles.title}>Week1Labs</Text>
-        <Text style={styles.subtitle}>Built by you, one lab at a time</Text>
+        <Text style={styles.subtitle}>Built by Ryan, one lab at a time</Text>
       </View>
       <View style={styles.footer}>
         <Button
