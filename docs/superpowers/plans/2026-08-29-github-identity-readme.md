@@ -160,13 +160,13 @@ Run:
 
 ```bash
 set -e
-for path in \
+for project_file in \
   App.js \
   lab1-practice.js \
   components/TaskCard.js \
   screens/AddTaskScreen.js \
   screens/WelcomeScreen.js; do
-  test -f "$path"
+  test -f "$project_file"
 done
 node lab1-practice.js
 node -e "const pkg = require('./package.json'); if (pkg.scripts.start !== 'expo start') process.exit(1);"
