@@ -52,7 +52,7 @@ The identity note will be factual and respectful, not defensive. It will state:
 ## Scope
 
 - Add one root-level `README.md`.
-- Do not change application code, dependencies, Git history, repository visibility, collaborators, or the GitHub username.
+- Do not change application code, dependencies, existing commit history, repository visibility, collaborators, or the GitHub username.
 - Do not add screenshots, badges, generated graphics, or unrelated portfolio marketing.
 
 ## Verification
