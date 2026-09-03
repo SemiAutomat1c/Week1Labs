@@ -27,14 +27,14 @@ export default function AddTaskScreen() {
       } catch (error) {
         console.error('Failed to load tasks:', error);
       } finally {
-        setIsLoaded(true); // Mark initial load as complete
+        setIsLoaded(true);
       }
     };
     loadTasks();
   }, []);
 
   useEffect(() => {
-    if (!isLoaded) return; // Prevent saving default/empty state on startup
+    if (!isLoaded) return;
     const saveTasks = async () => {
       try {
         await AsyncStorage.setItem('tasks', JSON.stringify(tasks));
@@ -62,6 +62,10 @@ export default function AddTaskScreen() {
         t.id === id ? { ...t, done: !t.done } : t
       )
     );
+  }
+
+  function handleDeleteTask(id) {
+    setTasks(tasks.filter((t) => t.id !== id));
   }
 
   return (
@@ -98,6 +102,7 @@ export default function AddTaskScreen() {
             title={item.title}
             done={item.done}
             onToggle={() => handleToggleTask(item.id)}
+            onDelete={() => handleDeleteTask(item.id)}
           />
         )}
         ListEmptyComponent={
