@@ -19,11 +19,18 @@ export default function AddTaskScreen() {
   const [errorMessage, setErrorMessage] = useState('');
   const [quote, setQuote] = useState("Loading today's motivation...");
 
-  useEffect(() => {
-    fetch('https://api.quotable.io/random')
-      .then((response) => response.json())
-      .then((data) => setQuote(data.content))
+  function fetchQuote() {
+    fetch('https://dummyjson.com/quotes/random')
+      .then((response) => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+      })
+      .then((data) => setQuote(data.quote || data.content))
       .catch(() => setQuote('Believe in yourself and get it done!'));
+  }
+
+  useEffect(() => {
+    fetchQuote();
   }, []);
 
   useEffect(() => {
@@ -88,11 +95,7 @@ export default function AddTaskScreen() {
       <Text style={styles.quote}>💬 {quote}</Text>
       <Button
         title="New Quote"
-        onPress={() => {
-          fetch('https://api.quotable.io/random')
-            .then((response) => response.json())
-            .then((data) => setQuote(data.content));
-        }}
+        onPress={fetchQuote}
       />
       <Text style={styles.heading}>Add a Task</Text>
       <TextInput
