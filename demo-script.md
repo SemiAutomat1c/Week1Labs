@@ -71,3 +71,15 @@
   *Answer:* The Web API quote gracefully falls back to a preset motivational quote via `.catch()`. Firebase Firestore also caches writes locally and syncs them once an internet connection is re-established.
 - **Q: Why use Expo EAS Build instead of plain Expo Go for the demo?**
   *Answer:* EAS Build packages the complete source and native runtime into an installable `.apk` file that runs natively on Android without requiring an active development server or network cable.
+
+---
+
+## 📋 Self-Assessment Checklist (Demo Day Readiness)
+
+- [x] App is packaged with EAS Build (`.apk`) and opens without needing a laptop/cable.
+- [x] Verified user can register, log in, navigate screens, and present features.
+- [x] Exact 2-3 screen demo sequence mapped out and rehearsed.
+- [x] Technical challenge (per-user scoping & auth lifecycle) clearly articulated in plain language.
+- [x] GitHub repository link is active, accessible, and up to date.
+- [x] Presentation timings strictly calibrated to 5 minutes.
+
